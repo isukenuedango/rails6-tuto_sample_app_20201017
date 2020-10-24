@@ -30,10 +30,14 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
-
-  # Don't care if the mailer can't send.
+  
   config.action_mailer.raise_delivery_errors = false
-
+  
+  # https://4c815e0be76444319def1c9d02ccc52b.vfs.cloud9.ap-northeast-1.amazonaws.com/
+  host = '4c815e0be76444319def1c9d02ccc52b.vfs.cloud9.ap-northeast-1.amazonaws.com'     # クラウドIDE
+  # クラウドIDEの場合は以下をお使いください
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
